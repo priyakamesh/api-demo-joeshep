@@ -16,6 +16,16 @@ const Director = bookshelf.Model.extend ( {
       .catch( (err)=>{
         return err
       })
+  },
+  getAll: function (){
+    return this.forge()
+      .fetchAll()
+      .then((directors) =>{
+        return directors
+      })
+      .catch( (err)=>{
+        return err
+      })
   }
 });
 module.exports = bookshelf.model('Director', Director)
