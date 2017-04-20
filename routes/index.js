@@ -3,6 +3,7 @@
 const { Router } = require('express')
 const router = Router()
 router.use(require('./show'))
+router.use(require('./director'))
 // require('./director')
 router.get('/', function(req, res) {
   res.json({
