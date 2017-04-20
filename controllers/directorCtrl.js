@@ -12,3 +12,13 @@ module.exports.getDirector = ({params: {id}},res,next)=>{
     return err
   })
 }
+
+module.exports.getAllDirectors = (req,res,next)=>{
+  Director.getAll()
+  .then((directors)=>{
+    return res.status(200).json(directors)
+  })
+  .catch((err)=>{
+    return err
+  })
+}
