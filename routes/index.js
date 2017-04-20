@@ -10,10 +10,11 @@ router.get('/', function(req, res) {
     "title": "Shows and Directors",
     "Shows": "http://api-demo-priya.herokuapp.com/api/v1/shows",
     "Single_Show": "http://api-demo-priya.herokuapp.com/api/v1/shows/<showId>",
-    "favorites": "https://api-demo-priya.herokuapp.com/api/v1/shows/favorites?showId=3",
-    "Show_directors": "https://api-demo-priya.herokuapp.com/api/v1/shows/directors?showId=3",
+    "favorites": "https://api-demo-priya.herokuapp.com/api/v1/shows/favorites?showId=<showId>",
+    "Show_directors": "https://api-demo-priya.herokuapp.com/api/v1/shows/directors?showId=<showId>",
     "Single_director": "https://api-demo-priya.herokuapp.com/api/v1/director/<directorId>",
-    "Directors": "http://api-demo-priya.herokuapp.com/api/v1/directors"
+    "Directors": "http://api-demo-priya.herokuapp.com/api/v1/directors",
+    "Director_Shows": "https://api-demo-priya.herokuapp.com/api/v1/director/shows?id=<directorId>"
   });
 });
 

@@ -22,3 +22,13 @@ module.exports.getAllDirectors = (req,res,next)=>{
     return err
   })
 }
+module.exports.getdirectorShows = ({query: {id}},res,next)=>{
+  Director.forge({id:id})
+  .fetch({withRelated: ['shows'], require: true})
+  .then((directorShow)=>{
+    return res.status(200).json(directorShow)
+  })
+  .catch((err)=>{
+    return err
+  })
+}
