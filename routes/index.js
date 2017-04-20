@@ -2,14 +2,15 @@
 
 const { Router } = require('express')
 const router = Router()
+router.use(require('./show'))
+// require('./director')
+router.get('/', function(req, res) {
+  res.json({
+    "title": "Shows and Directors",
+    "Shows": "http://localhost:3000/api/v1/shows",
+    "favorites": "https://api-demo-priya.herokuapp.com/api/v1/shows/favorites?showId=3",
+    "directors": "https://api-demo-priya.herokuapp.com/api/v1/shows/directors?showId=3"
+  });
+});
 
-const { getShows, getShowFaves, getShow, addShow, deleteShow, getShowDirectors } = require('../controllers/showCtrl')
-
-router.get('/shows', getShows)
-router.post('/shows/new', addShow)
-router.delete('/shows/:id', deleteShow)
-router.get('/shows/favorites', getShowFaves)
-router.get('/shows/directors', getShowDirectors)
-router.get('/shows/:id', getShow)
-
-module.exports = router
+module.exports = router;

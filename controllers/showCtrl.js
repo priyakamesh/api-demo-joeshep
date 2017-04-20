@@ -49,12 +49,12 @@ module.exports.getShowFaves = ({query: {showId}}, res, next) => {
     next(err);
   });
 };
-module.exports.getShowDirectors = ({query: {showId}}, res, next) => {
-  console.log("getting a show and directors", showId);
+
+module.exports.getShowDirector = ({query: {showId}}, res, next) => {
+  console.log("The query string", showId);
   Show.forge({id: showId})
   .fetch({withRelated: ['directors'], require: true})
   .then( (showdirector) => {
-    console.log("hi.im in then")
     res.status(200).json(showdirector)
   })
   .catch( (err) => {
